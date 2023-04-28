@@ -1,7 +1,12 @@
 import React from 'react';
 import s from './Post.module.css';
 
-const Post = (props:any) => {
+type PropsType = {
+    message: string;
+    sumLike: string;
+}
+
+const Post = (props:PropsType) => {
     return (
         <div className={s.item}>
             <img src='https://s0.rbk.ru/v6_top_pics/media/img/6/12/755809115374126.jpg' alt='No photo'/>
