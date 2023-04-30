@@ -3,7 +3,7 @@ import s from './Post.module.css';
 
 type PropsType = {
     message: string;
-    sumLike: string;
+    sumLike: number;
 }
 
 const Post = (props:PropsType) => {
