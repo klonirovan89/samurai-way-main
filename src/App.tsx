@@ -10,14 +10,14 @@ import {BrowserRouter, Route} from "react-router-dom";
 const App = () => {
     return (
         <BrowserRouter>
-        <div className='app-wrapper'>
-            <Header/>
-            <Navbar/>
-            <div className='app-wrapper-content'>
-                <Route exact path='/Dialogs' component={Dialogs}/>
-                <Route exact path='/Profile' component={Profile}/>
+            <div className='app-wrapper'>
+                <Header/>
+                <Navbar/>
+                <div className='app-wrapper-content'>
+                    <Route exact path='/Dialogs' component={Dialogs}/>
+                    <Route exact path='/Profile' component={Profile}/>
+                </div>
             </div>
-        </div>
         </BrowserRouter>
     );
 }
