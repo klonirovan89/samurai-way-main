@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './../Dialogs.module.css';
-import {MessagePropsType} from "../Dialogs";
+import {arrMessagePropsType} from "../../../index";
 
 
-const Message = (props: MessagePropsType) => {
+const Message = (props: arrMessagePropsType) => {
     return (
         <div className={s.dialog}>{props.message}</div>
     );
