@@ -6,7 +6,7 @@ import {allPropsType} from "../../index";
 
 
 const Dialogs: React.FC<allPropsType> = (props) => {
-
+debugger;
     let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
 
     let messagesElements = props.messages.map(m => <Message message={m.message} id={m.id}/>);
