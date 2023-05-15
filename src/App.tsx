@@ -8,8 +8,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import {AppType} from "./redux/State";
 
 
-const App: React.FC<AppType> = ({appState}) => {
-
+const App = (props: AppType) => {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -17,12 +16,9 @@ const App: React.FC<AppType> = ({appState}) => {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Route exact path='/Dialogs'
-                           render={() => <Dialogs
-                               dialogs={appState.dialogs}
-                               messages={appState.messages}/>}/>
+                           render={() => <Dialogs state={props.state.dialogsPage}/>}/>
                     <Route exact path='/Profile'
-                           render={() => <Profile
-                               posts={appState.posts}/>}/>
+                           render={() => <Profile state={props.state.profilePage}/>}/>
                 </div>
             </div>
         </BrowserRouter>
