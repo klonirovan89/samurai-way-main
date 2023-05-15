@@ -20,7 +20,7 @@ export type stateType = {
     messages: MessagePropsType[]
 }
 export type AppType = {
-    state: stateType
+    appState: stateType
 }
 
 export let state: stateType = {
