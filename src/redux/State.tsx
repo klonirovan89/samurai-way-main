@@ -30,6 +30,7 @@ export type DialogsPageType = {
 
 export type AppType = {
     state: stateType,
+    addPost: (postMessage: string) => void;
 }
 
 export type dialogsPropsType = {
@@ -38,6 +39,7 @@ export type dialogsPropsType = {
 
 export type profilePropsType = {
     state: ProfilePageType
+    addPost: (postMessage: string) => void;
 }
 
 export let state: stateType = {
@@ -66,3 +68,32 @@ export let state: stateType = {
         ]
     }
 }
+
+export const addPost = (postMessage: string) => {
+    let newPost = {id: 7, message: postMessage, likesCount: 15}
+    state.profilePage.posts.push(newPost)
+    console.log(state.profilePage.posts)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

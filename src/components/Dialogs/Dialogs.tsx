@@ -17,7 +17,11 @@ const Dialogs = (props: dialogsPropsType) => {
             </div>
             <div className={s.messages}>
                 {messagesElements}
+                {/*<input></input>*/}
+                {/*<button>Send</button>*/}
             </div>
+
+
         </div>
 
     )
