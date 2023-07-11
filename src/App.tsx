@@ -16,9 +16,16 @@ const App = (props: AppType) => {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Route exact path='/Dialogs'
-                           render={() => <Dialogs state={props.state.dialogsPage}/>}/>
+                           render={() =>
+                               <Dialogs
+                               state={props.state.dialogsPage}
+                           />}/>
                     <Route exact path='/Profile'
-                           render={() => <Profile state={props.state.profilePage} addPost={props.addPost}/>}/>
+                           render={() =>
+                               <Profile
+                               state={props.state.profilePage}
+                               addPost={props.addPost}
+                               newPostText={props.state.profilePage.newPostText}/>}/>
                 </div>
             </div>
         </BrowserRouter>
