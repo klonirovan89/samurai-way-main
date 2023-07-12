@@ -1,5 +1,3 @@
-import {rerenderEntireTree} from "../Render";
-
 
 export type MyPostsPropsType = {
     id: number,
@@ -77,6 +75,15 @@ export let state: stateType = {
     }
 }
 
+let rerenderEntireTree = (state: stateType) => {
+
+}
+
+type subscriberType = (observer: (state: stateType) => void) => void
+
+export const subscriber:subscriberType = (observer) => {
+    rerenderEntireTree = observer
+}
 
 export const addPost = () => {
     let newPost = {id: 7, message: state.profilePage.newPostText, likesCount: 15}
