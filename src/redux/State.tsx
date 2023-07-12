@@ -34,7 +34,8 @@ export type DialogsPageType = {
 
 export type AppType = {
     state: stateType,
-    addPost: (postMessage: string) => void;
+    addPost: () => void;
+    updateNewPostText: (text: string) => void
 }
 
 export type dialogsPropsType = {
@@ -42,9 +43,10 @@ export type dialogsPropsType = {
 }
 
 export type profilePropsType = {
-    state: ProfilePageType
-    addPost: (postMessage: string) => void;
+    posts: ProfilePageType
+    addPost: () => void;
     newPostText: string
+    updateNewPostText: (text: string) => void
 }
 
 export let state: stateType = {
@@ -53,7 +55,7 @@ export let state: stateType = {
             {id: 1, message: 'How are you?', likesCount: 15},
             {id: 1, message: 'It is my first post', likesCount: 11}
         ],
-        newPostText: "it"
+        newPostText: ""
     },
     dialogsPage: {
         dialogs: [
@@ -75,13 +77,19 @@ export let state: stateType = {
     }
 }
 
-export const addPost = (postMessage: string) => {
-    let newPost = {id: 7, message: postMessage, likesCount: 15}
+
+export const addPost = () => {
+    let newPost = {id: 7, message: state.profilePage.newPostText, likesCount: 15}
     state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText = ""
     rerenderEntireTree(state)
+
 }
 
-
+export const updateNewPostText = (text: string) => {
+    state.profilePage.newPostText = text;
+    rerenderEntireTree(state)
+}
 
 
 

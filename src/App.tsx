@@ -23,9 +23,12 @@ const App = (props: AppType) => {
                     <Route exact path='/Profile'
                            render={() =>
                                <Profile
-                               state={props.state.profilePage}
+                               posts={props.state.profilePage}
                                addPost={props.addPost}
-                               newPostText={props.state.profilePage.newPostText}/>}/>
+                               newPostText={props.state.profilePage.newPostText}
+                               updateNewPostText={props.updateNewPostText}
+                               />
+                    }/>
                 </div>
             </div>
         </BrowserRouter>
